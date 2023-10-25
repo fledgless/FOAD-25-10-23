@@ -6,6 +6,10 @@ function random(min, max) {
 let resultat = Math.round(random(1, 100));
 console.log(resultat);
 
+// variables pour choix du nombre d'essais
+let i;
+let essaisMax = Number(prompt("En combien d'essais voulez-vous trouvez la solution ?"));
+
 // prompt sélection de chiffre
 let nombre = Number(prompt("veuillez saisir un chiffre entre 1 et 100 :"));
 
@@ -14,10 +18,8 @@ if (nombre < 0, nombre > 100) {
     let nombre = Number(prompt("Nombre invalide, veuillez réessayer :"));
 }
 
-// resultats + nouvel essai
-let i;
-
-for (i = 1; i <= 5; i++) {
+// resultats + nouveaux essaies
+for (i = 2; i <= essaisMax; i++) {
     if (nombre < resultat) {
         console.log("plus grand");
         nombre = Number(prompt("Plus grand ! Essaie encore !"));
@@ -34,5 +36,5 @@ for (i = 1; i <= 5; i++) {
 if (nombre !== resultat) {
     alert("C'est perdu !");
 }
-// find out how to add new tries 
+
 
