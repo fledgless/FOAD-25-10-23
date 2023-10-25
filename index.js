@@ -1,38 +1,38 @@
-// Générer un nombre entre 1 et 100 aléatoirement.
-// 2. Demander de saisir un nombre entre 1 et 100.
-// 3. Dire si « plus grand », « plus petit » ou « c’est gagné ! »
-
+// fonction chiffre aléatoire
 function random(min, max) {
     return Math.random() * (max - min) + min;
   }
 
-let resultat = Math.round(random(1, 100))
+let resultat = Math.round(random(1, 100));
 console.log(resultat);
 
-let number = prompt("veuillez saisir un chiffre entre 1 et 100 :")
+// prompt sélection de chiffre
+let nombre = Number(prompt("veuillez saisir un chiffre entre 1 et 100 :"));
 
-if (number < resultat) {
-    console.log("plus petit")
-} else if (number > resultat) {
-    console.log("plus grand")
-} else if (number === resultat) {
-    console.log("c'est gagné !")
+// prompt en cas de nombres invalides
+if (nombre < 0, nombre > 100) {
+    let nombre = Number(prompt("Nombre invalide, veuillez réessayer :"));
 }
 
-if (number < resultat) {
-    let newNumber = prompt("essaie encore (cherche plus grand)")
-} else if (number > resultat) {
-    let newNumber = prompt ("essaie encore (cherche plus petit)")
-} else if (number === resultat) {
-    MessageEvent("you win!")
+// resultats + nouvel essai
+let i;
+
+for (i = 1; i <= 5; i++) {
+    if (nombre < resultat) {
+        console.log("plus grand");
+        nombre = Number(prompt("Plus grand ! Essaie encore !"));
+    } else if (nombre > resultat) {
+        console.log("plus petit");
+        nombre = Number(prompt("Plus petit ! Essaie encore !"));
+    } else if (nombre === resultat) {
+        console.log("c'est gagné !");
+         alert("c'est gagné !");
+         break;
+    } 
 }
 
-if (newNumber < resultat) {
-    console.log("plus petit")
-} else if (newNnumber > resultat) {
-    console.log("plus grand")
-} else if (newNumber === resultat) {
-    console.log("c'est gagné !")
+if (nombre !== resultat) {
+    alert("C'est perdu !");
 }
+// find out how to add new tries 
 
-console.log(number);
